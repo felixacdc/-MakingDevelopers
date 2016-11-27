@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var mocha = require('gulp-mocha');
 
 // Imported tasks
 gulp.task('lint', require('./gulp/eslint'));
