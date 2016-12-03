@@ -7,7 +7,7 @@ module.exports = getEnv;
  */
 
 function getEnv() {
-    return {
-        name: process.env.NODE_ENV ? process.env.NODE_ENV : 'production'
-    }
+  return {
+    name: process.env.NODE_ENV ? process.env.NODE_ENV : 'production'
+  };
 }
