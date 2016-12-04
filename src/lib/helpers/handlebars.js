@@ -4,7 +4,7 @@ function compress(content) {
   if (!$config().html.minify) {
     return content.fn(this);
   }
-  
+
   return minify(content.fn(this), {
     removeComments: true,
     collapseWhitespace: true,
@@ -14,4 +14,4 @@ function compress(content) {
 
 export default {
   compress: compress
-}
+};
