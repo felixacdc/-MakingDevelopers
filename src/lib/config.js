@@ -1,9 +1,7 @@
-var fs = require('fs');
-var yaml = require('js-yaml');
-var env = require('./env');
-var config = yaml.safeLoad(fs.readFileSync(`${__dirname}/../config/config.yml`, 'utf-8'));
-
-module.exports = getConfig;
+import fs from 'fs';
+import yaml from 'js-jaml';
+import env from './env';
+const config = yaml.safeLoad(fs.readFileSync(`${__dirname}/../config/config.yml`, 'utf-8'));
 
 /**
  * 
@@ -11,6 +9,6 @@ module.exports = getConfig;
  * 
  */
 
-function getConfig() {
+export default function getConfig() {
   return config[env().name] || {};
 }
