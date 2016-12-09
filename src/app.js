@@ -1,21 +1,21 @@
-var express = require('express');
-var path = require('path');
-//var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+import express from 'express';
+import path from 'path';
+//import favicon from 'serve-favicon';
+import logger from 'morgan';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import exphbs from 'express-handlebars';
+import stylus from 'stylus';
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+import routes from './routes/index';
+import users from './routes/users';
+import hbsHelpers from './lib/helpers/handlebars';
+import config from './lib/config';
 
-var app = express();
-
-var exphbs = require('express-handlebars');
-var hbsHelpers = require('./lib/helpers/handlebars');
-var stylus = require('stylus');
+const app = express();
 
 // Loading config
-global.$config = require('./lib/config');
+global.$config = config;
 
 // Stylus middleware
 if (!$config().html.css.stylusPrecompile) {
