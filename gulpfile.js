@@ -34,3 +34,11 @@ gulp.task('stylus', function () {
 gulp.task('livereload', () => {
     livereload({ start: true });
 });
+
+// Mocha task
+gulp.task('test', () => {
+  return gulp.src([
+    'test/**/*Test.js'
+  ])
+  .pipe(mocha());
+});
