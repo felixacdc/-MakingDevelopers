@@ -1,13 +1,17 @@
-import eslint from 'gulp-eslint';
-import gulp from 'gulp';
-import livereload from 'gulp-livereload';
-import nodemon from 'gulp-nodemon';
-import notify from 'gulp-notify';
-import stylus from 'gulp-stylus';
-import mocha from 'gulp-mocha';
+const eslint = require('gulp-eslint'),
+    gulp = require('gulp'),
+    livereload = require('gulp-livereload'),
+    nodemon = require('gulp-nodemon');
+    notify = require('gulp-notify'),
+    stylus = require('gulp-stylus'),
+    mocha = require('gulp-mocha');
+
+// tasks
+gulp.task('analyze', ['lint']);
+gulp.task('pre-push', ['lint']);
 
 // Linter task
-gulp.task('eslint', function () {
+gulp.task('lint', function () {
     return gulp.src([
         'src/**/*.js',
         '!src/public/bower_components/**/*.js'
